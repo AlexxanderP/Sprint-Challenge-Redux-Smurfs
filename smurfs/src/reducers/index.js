@@ -2,6 +2,10 @@ import {
   FETCH_SMURFS_REQUEST,
   FETCH_SMURFS_SUCCESS,
   FETCH_SMURFS_FAILURE,
+  ADD_SMURF_REQUEST,
+  ADD_SMURF_SUCCESS,
+  ADD_SMURF_FAILURE,
+
 } from '../actions';
 
 
@@ -37,6 +41,25 @@ export default (state = initialState, action) => {
         error: action.payload,
         fetchingSmurfs: false,
       };
+    case ADD_SMURF_REQUEST:
+      return {
+        ...state,
+        addingSmurf: true,
+        error: null
+      };
+    case ADD_SMURF_SUCCESS:
+      return {
+        ...state,
+        addingSmurf: false,
+        smurfs: action.payload,
+        error: null,
+      };
+    case ADD_SMURF_FAILURE:
+      return {
+        ...state,
+        addingSmurf: false,
+        error: action.payload,
+      }
       default:
         return state;
   }

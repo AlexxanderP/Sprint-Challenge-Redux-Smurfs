@@ -22,9 +22,29 @@ In this challenge, you are to build the Smurfs village once again, only this tim
 
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
-- [ ] In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
-- [ ] What is the difference between Application state and Component state? When would be a good time to use one over the other?
-- [ ] Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
+- [X] In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
+
+Actions: send information as a payload from your application to your store, and are the only information for the store.
+
+Reducers: Specify how the applications state changes in response to actions sent to the store, they only describe what happened, not how the applications state changes.
+
+Store: An object that brings actions and reducers together, it: holds the application state, Allows access to state (getState), allows state to be updated (dispatch(action)), registers listeners, and handles unregistered listeners.
+
+
+
+
+
+- [X] What is the difference between Application state and Component state? When would be a good time to use one over the other?
+
+  App state is for anything the application does, such as re-rendering multiple components, and all the bulk heavy lifting that depends on data that is often changing, a good time to use component state as mention before is on forms, since they are very localized and will not be necessary, or worth the hassle to pass around an input change handler rather than write one when necessary 
+
+
+- [X] Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
+
+
+Redux-thunk is a middleWare that is used for asynchronous orchestration, it is a function within another function that takes the parameters of dispatch and getState,
+
+
 
 ## Project Set Up
 
